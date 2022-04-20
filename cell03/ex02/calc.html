@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <script>
+        function useMe() {
+            err("Please, use me...");
+        }
+        setInterval(useMe, 30000);
+
+        function err(res) {
+            console.log(res);
+            alert(res);
+        }
+
+        function calc() {
+            let nb1 = document.getElementsByName("nb1")[0].value;
+            let select = document.getElementsByName("oplist")[0].value;
+            let nb2 = document.getElementsByName("nb2")[0].value;
+            let res;
+            if (nb1 < 0 || nb2 < 0 )
+            {
+                err("Error :(");
+                return;
+            }
+            if (select === "plus") {
+                res = parseInt(nb1) + parseInt(nb2);
+            } else if (select === "moins") {
+                res = nb1 - nb2;
+            } else if (select === "fois") {
+                res = nb1 * nb2;
+            } else if (select === "division") {
+                if (nb2 == 0) {
+                    err("It’s over 9000!");
+                    return;
+                }
+                res = nb1 / nb2;
+            } else if (select === "modulo") {
+                if (nb2 == 0) {
+                    err("It’s over 9000!");
+                    return;
+                }
+                res = nb1 % nb2;
+            }
+            console.log(res);
+            alert(res);
+        }
+    </script>
+</head>
+<body>
+    <form id="form">
+        <input name="nb1" type="text">
+        <select name="oplist" id="op" form="form">
+            <option value="plus">+</option>
+            <option value="moins">-</option>
+            <option value="fois">*</option>
+            <option value="division">/</option>
+            <option value="modulo">%</option>
+        </select>
+        <input name="nb2" type="text">
+        <input type="submit" value="Try me!" onclick="calc()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <script src="todo.js"></script>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        button {
+            cursor: copy;
+        }
+        .todo {
+            cursor: no-drop;
+        }
+    </style>
+</head>
+<body>
+    <h1>ToDo</h1>
+    <div id="ft_list">
+    </div>
+    <button onclick="newlist()">New</button>
+</body>
+</html>
